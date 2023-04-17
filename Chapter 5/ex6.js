@@ -16,7 +16,6 @@
  */
 // Khai báo các biến cần thiết
 let arr = [];
-let choice = true;
 const menu = `
 
 -- CHỌN CHỨC NĂNG --
@@ -35,28 +34,23 @@ Khi chọn 5: Thoát khỏi chương trình
 
 // Hàm các chức năng
 do {
-    let chooseOption = prompt(menu);
-    if (chooseOption === '1') {
-        arr = inputArr();
-        check = false;
-    } else if (check) {
-        alert("Giá trị rỗng, vui lòng chọn 1 để nhập giá trị");
-    } else if (chooseOption === '2') {
-        outputArr(arr);
-    } else if (chooseOption === '3') {
-        reversedArr(arr);
-    } else if (chooseOption === '4') {
-        sortArr(arr);
-    } else if (chooseOption === '5') {
-        console.log("Cya!");
-        break;
-    }  else {
-        console.log("Chọn lại!");
-        break;
-    }
-
-} while(true);
-
+  let chooseOption = prompt(menu);
+  if (chooseOption === "1") {
+    arr = inputArr();
+  } else if (chooseOption === "2") {
+    outputArr(arr);
+  } else if (chooseOption === "3") {
+    reversedArr(arr);
+  } else if (chooseOption === "4") {
+    sortArr(arr);
+  } else if (chooseOption === "5") {
+    console.log("Cya!");
+    break;
+  } else {
+    console.log("Chọn lại!");
+    break;
+  }
+} while (true);
 
 // Nhập mảng
 function inputArr() {
@@ -115,8 +109,8 @@ function sortArr(arr) {
   let check = true;
   function isAllNumber(arr) {
     for (let eachEle = 0; eachEle < arr.length; eachEle++) {
-        let eachEleValue = Number(arr[eachEle]);
-        if (typeof eachEleValue !== "number") {
+      let eachEleValue = Number(arr[eachEle]); // Giá trị toàn là số rồi
+      if (typeof eachEleValue !== "number") {
         check = false;
         break;
       }
@@ -154,3 +148,4 @@ function sortArr(arr) {
   console.log("Mảng đã được sort là: " + arr);
 }
 
+// Row 118 has problem
